@@ -1,2 +1,9 @@
 ## IDEA ##
 .idea
+
+## CMake ##
+cmake-build-debug/
+
+## Makefile ##
+*.o
+build
