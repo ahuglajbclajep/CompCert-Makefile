@@ -15,6 +15,7 @@ all: run
 build:
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $(entry_point) $(src) $(LDFLAGS) $(LIBS) -o $(BUILD_DIR)/$(bin)
+	@mv *.o $(BUILD_DIR)
 
 clean:
 	rm -rf $(BUILD_DIR)
