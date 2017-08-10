@@ -18,6 +18,7 @@ However, it is also possible to build using [CMake](https://github.com/Kitware/C
 
 ## How to Install CompCert C compiler
 Details are written on the official page, so I will explain how to obtain what you need such as Coq.
+
 1. Install OPAM  
 OPAM is OCaml Package Manager.
 ```sh
@@ -30,15 +31,18 @@ eval `opam config env`  # Be sure to do after switch
 
 sudo apt install m4  # If you get a warning about m4
 ```
+
 2. Install Coq
 ```sh
 opam update  # Update the packages database
 opam install coq.8.6
 ```
+
 3. Install Menhir
 ```sh
 opam install menhir
 ```
+
 4. Add the path & Check  
 Add the path `$HOME/.opam/4.05.0/bin` and check installation was successful.
 ```sh
