@@ -49,3 +49,6 @@ Add the path `$HOME/.opam/4.05.0/bin` and check installation was successful.
 coqc -v
 menhir --version
 ```
+
+## License
+[MIT](LICENSE)
