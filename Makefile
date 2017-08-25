@@ -5,18 +5,19 @@ LDFLAGS =
 bin = Hello-CompCert
 src = main.c hello-world.c
 
+.PHONY: run
+.SUFFIXES: .c .o
+
 $(bin): $(src:.c=.o)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 all: clean $(bin)
 
-SUFFIXES:.c .o
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
 clean:
 	$(RM) $(src:.c=.o) $(bin)
 
-.PHONY: run
 run:
 	@make && ./$(bin)
