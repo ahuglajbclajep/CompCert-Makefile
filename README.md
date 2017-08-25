@@ -11,7 +11,7 @@ cd hello-CompCert
 ### Build & Run
 **CompCert C compiler is required to build this.**
 ```sh
-make
+make run
 ```
 
 However, it is also possible to build using [CMake](https://github.com/Kitware/CMake) for confirmation.
