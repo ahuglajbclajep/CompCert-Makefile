@@ -1,24 +1,22 @@
 CC = ccomp
-CFLAGS =
+CFLAGS = -O2
 LDFLAGS =
-LIBS =
 
-BUILD_DIR = build
+bin = Hello-CompCert
+src = main.c hello-world.c
 
-bin = Hello_CompCert
-entry_point = main.c
-src = hello-world.c
+$(bin): $(src:.c=.o)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
-all: run
+all: clean $(bin)
 
-.PHONY: build
-build:
-	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) $(entry_point) $(src) $(LDFLAGS) $(LIBS) -o $(BUILD_DIR)/$(bin)
-	@mv *.o $(BUILD_DIR)
+SUFFIXES:.c .o
+.c.o:
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -rf $(BUILD_DIR)
+	$(RM) $(src:.c=.o) $(bin)
 
-run: build
-	@cd $(BUILD_DIR) && ./$(bin)
+.PHONY: run
+run:
+	@make && ./$(bin)
