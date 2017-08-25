@@ -16,8 +16,8 @@ all: clean $(bin)
 .c.o:
 	$(CC) $(CFLAGS) -c $<
 
-clean:
-	$(RM) $(src:.c=.o) $(bin)
-
 run:
 	@make && ./$(bin)
+
+clean:
+	$(RM) $(src:.c=.o) $(bin)
