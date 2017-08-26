@@ -1,23 +1,31 @@
 CC = ccomp
 CFLAGS = -O2
 LDFLAGS =
+INCLUDE =
 
-bin = Hello-CompCert
-src = main.c hello-world.c
+APP_NAME = Hello-CompCert
+SRC_DIR = .
+OBJ_DIR = build
+SRC = $(shell ls $(SRC_DIR)/*.c)
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-.PHONY: run
-.SUFFIXES: .c .o
-
-$(bin): $(src:.c=.o)
+$(OBJ_DIR)/$(APP_NAME): $(OBJ)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-all: clean $(bin)
+all: clean $(OBJ_DIR)/$(APP_NAME)
 
-.c.o:
-	$(CC) $(CFLAGS) -c $<
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -MM -MP -MT $@ -MF $(@:.o=.d) $<
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
 run:
-	@make && ./$(bin)
+	@make
+	@cd $(OBJ_DIR) && ./$(APP_NAME)
 
 clean:
-	$(RM) $(src:.c=.o) $(bin)
+	$(RM) $(OBJ) $(OBJ:.o=.d) $(OBJ_DIR)/$(APP_NAME)
+
+-include $(OBJ:.o=.d)
+
+.PHONY: all run clean
