@@ -1,10 +1,10 @@
 CC = ccomp
 CFLAGS = -O2
 LDFLAGS =
-INCLUDE =
+INCLUDE = -I $(SRC_DIR)
 
 APP_NAME = Hello-CompCert
-SRC_DIR = .
+SRC_DIR = src
 OBJ_DIR = build
 SRC = $(shell ls $(SRC_DIR)/*.c)
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
