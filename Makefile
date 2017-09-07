@@ -1,7 +1,7 @@
 CC = ccomp
 CFLAGS = -O2
 LDFLAGS =
-INCLUDE = -I $(SRC_DIR)
+INCLUDE = -I$(SRC_DIR)
 
 APP_NAME = Hello-CompCert
 SRC_DIR = src
@@ -17,7 +17,7 @@ all: clean $(OBJ_DIR)/$(APP_NAME)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) -MM -MP -MT $@ -MF $(@:.o=.d) $<
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
+	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
 
 run:
 	@make
