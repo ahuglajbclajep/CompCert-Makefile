@@ -1,5 +1,5 @@
-# hello-CompCert
-*Hello, World!* at [CompCert C compiler](https://github.com/AbsInt/CompCert).
+# CompCert-Makefile
+Simple Makefile for [CompCert C compiler](https://github.com/AbsInt/CompCert).
 
 ## Usage
 ### Install
@@ -9,7 +9,7 @@ cd hello-CompCert
 ```
 
 ### Build & Run
-**CompCert C compiler is required to build this.**
+*Hello, World!* at CompCert C compiler.
 ```sh
 make run
 ```
@@ -17,7 +17,7 @@ make run
 However, it is also possible to build using [CMake](https://github.com/Kitware/CMake) for confirmation.
 
 ## How to Install CompCert C compiler
-Details are written on the official page, so I will explain how to obtain what you need such as Coq.
+Details are written on the [official page](http://compcert.inria.fr/man/manual002.html), so I will explain how to obtain what you need such as Coq.
 
 1. Install OPAM. On Ubutu 16.04:
 ```sh
