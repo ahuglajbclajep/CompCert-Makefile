@@ -1,13 +1,8 @@
 # CompCert-Makefile
-Simple Makefile for [CompCert C compiler](https://github.com/AbsInt/CompCert).
+Simple Makefile example for [CompCert C compiler](https://github.com/AbsInt/CompCert).
+
 
 ## Usage
-### Install
-```sh
-git clone https://github.com/ahuglajbclajep/hello-CompCert.git
-cd hello-CompCert
-```
-
 ### Build & Run
 *Hello, World!* at CompCert C compiler.
 ```sh
@@ -15,6 +10,11 @@ make run
 ```
 
 However, it is also possible to build using [CMake](https://github.com/Kitware/CMake) for confirmation.
+```sh
+mkdir -p cmake-build-debug && cd $_ && cmake ..
+make run
+```
+
 
 ## How to Install CompCert C compiler
 Details are written on the [official page](http://compcert.inria.fr/man/manual002.html), so I will explain how to obtain what you need such as Coq.
@@ -46,6 +46,7 @@ opam install menhir
 coqc -v
 menhir --version
 ```
+
 
 ## License
 [MIT](LICENSE)
