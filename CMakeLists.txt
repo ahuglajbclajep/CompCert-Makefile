@@ -9,5 +9,5 @@ add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 
 add_custom_target(run
   COMMAND make
-  COMMAND ${PROJECT_NAME}
+  COMMAND ./${PROJECT_NAME}
 )

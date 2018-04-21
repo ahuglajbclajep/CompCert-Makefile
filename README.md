@@ -22,10 +22,8 @@ Details are written on the [official page](http://compcert.inria.fr/man/manual00
 1. Install OPAM. On Ubutu 16.04:
 ```sh
 sudo apt install opam
-opam init  # Initialize ~/.opam using an already installed OCaml
+opam init --comp 4.06.1  # Initialize ~/.opam
 eval `opam config env`
-opam switch 4.05.0  # Install OCaml 4.05.0
-eval `opam config env`  # Be sure to do after switch
 
 sudo apt install m4  # If you get a warning about m4
 ```
@@ -33,7 +31,7 @@ sudo apt install m4  # If you get a warning about m4
 2. Install Coq.
 ```sh
 opam update  # Update the packages database
-opam install coq.8.6
+opam install coq.8.7.1
 ```
 
 3. Install Menhir.
@@ -41,7 +39,7 @@ opam install coq.8.6
 opam install menhir
 ```
 
-4. Add the path `$HOME/.opam/4.05.0/bin` and check installation was successful.
+4. Add the path `$HOME/.opam/4.06.1/bin` and check installation was successful.
 ```sh
 coqc -v
 menhir --version
